@@ -1,0 +1,37 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+    }
+}
+
+apply plugin: 'groovy'
+apply plugin: 'idea'
+apply plugin: 'application'
+apply plugin: 'spring-boot'
+
+repositories {
+    mavenCentral()
+}
+
+mainClassName = 'com.github.tkdrahn.dataflow.SandboxApplication'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+run {
+    systemProperties = System.properties
+}
+
+
+dependencies {
+    compile "com.google.cloud.dataflow:google-cloud-dataflow-java-sdk-all:${googleDataflowVersion}"
+    compile "com.google.guava:guava:${guavaVersion}"
+
+    compile "joda-time:joda-time:${jodaVersion}"
+
+    compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
+    compile "org.slf4j:slf4j-api:${slf4jVersion}"
+    compile "org.springframework.boot:spring-boot-starter:${springBootVersion}"
+}

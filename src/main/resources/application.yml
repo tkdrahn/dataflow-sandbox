@@ -1,0 +1,4 @@
+# CHANGE THIS TO THE DIRECTORY YOU INSTALLED THE REPOSITORY IN
+installDirectory: /Users/tkdrahn/GitHub/dataflow-sandbox
+
+inputFile: /data/input/event-log.csv
